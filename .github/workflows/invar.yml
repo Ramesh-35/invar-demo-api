@@ -9,18 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Index and trust root from the base branch, never from the PR
-        shell: bash
-        env:
-          BASE: ${{ github.base_ref }}
-        run: |
-          mkdir -p "$RUNNER_TEMP/base"
-          git archive "origin/$BASE" .invar | tar -x -C "$RUNNER_TEMP/base"
       - uses: Ramesh-35/invar@main
         with:
           check: 'false'
           dependents_repo: Ramesh-35/invar-demo-api
-          dependents_locks: ${{ runner.temp }}/base/.invar/index
-          dependents_signers: ${{ runner.temp }}/base/.invar/consumer-signers
+          dependents_locks: .invar/index
+          dependents_signers: .invar/consumer-signers
