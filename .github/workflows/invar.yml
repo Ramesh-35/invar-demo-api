@@ -19,8 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Ramesh-35/invar@main
+      - uses: Ramesh-35/invar@v0.2.2
         with:
           check: 'false'
-          version: v0.2.0
           judge_contract: schemas/media_player.json
