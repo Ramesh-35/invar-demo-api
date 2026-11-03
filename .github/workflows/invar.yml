@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Ramesh-35/invar@06c8a8e274e0faadb483c41869456f04f4e7b6c9 # v0.2.5
+      - uses: Ramesh-35/invar@7eee62014886f3b35d6ec4dcec00549f1cc709cf # v0.2.6
         with:
           check: 'false'
           judge_contracts: 'schemas/*.json'
